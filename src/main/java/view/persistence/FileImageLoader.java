@@ -21,14 +21,14 @@ public class FileImageLoader implements ImageLoader{
     }
 
     public Image load() {
-        if(files.length == 0){
-            return null;
-        }
-
         return imageAt(0);
     }
 
     private Image imageAt(int i) {
+        if(i < 0 || i >= files.length){
+            return null;
+        }
+
         return new Image() {
             @Override
             public String name() {
