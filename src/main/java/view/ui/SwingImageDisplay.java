@@ -35,7 +35,9 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
 
     @Override
     public void show(Image image) {
-        currentImage = image;
-        repaint();
+        if(image != null){
+            currentImage = image;
+            repaint();
+        }
     }
 }
